@@ -49,6 +49,61 @@ body{
   border-bottom: 2px solid var(--primary);
 }
 
+/* login page */
+.login-page{
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 360px;
+}
+.login-form h2{
+  margin: 0 0 6px;
+}
+.login-form input{
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+.login-form button{
+  padding: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.login-form button:hover{
+  filter: brightness(0.92);
+}
+.login-error{
+  color: var(--error);
+  font-size: 0.85rem;
+  margin: 0;
+}
+.nav-logout{
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--secondary);
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.nav-logout:hover{
+  color: var(--primary);
+}
+
 /* page content */
 .page-content{
   padding-bottom: 60px;

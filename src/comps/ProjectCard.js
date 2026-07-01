@@ -1,8 +1,10 @@
 import React, { useRef } from 'react'
 import { projectFireStore, projectStorage } from '../firebase/config'
+import { useAuthContext } from '../context/AuthContext'
 
 const ProjectCard = ({ doc }) => {
     const videoRef = useRef(null)
+    const { user } = useAuthContext()
 
     const handleDelete = async () => {
         await projectFireStore.collection('projects').doc(doc.id).delete()
@@ -26,7 +28,9 @@ const ProjectCard = ({ doc }) => {
                             View on GitHub →
                         </a>
                     )}
-                    <button className="project-delete-btn" onClick={handleDelete}>Delete</button>
+                    {user && (
+                        <button className="project-delete-btn" onClick={handleDelete}>Delete</button>
+                    )}
                 </div>
             </div>
         </div>

@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import useFirestore from '../hooks/useFirestore'
 import ProjectCard from '../comps/ProjectCard'
 import { projectStorage, projectFireStore, timestamp } from '../firebase/config'
+import { useAuthContext } from '../context/AuthContext'
 
 const Projects = () => {
     const { docs } = useFirestore('projects')
+    const { user } = useAuthContext()
     const [showForm, setShowForm] = useState(false)
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -51,9 +53,11 @@ const Projects = () => {
                     <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer" className="github-profile-link">
                         GitHub Profile →
                     </a>
-                    <button className="toggle-form-btn" onClick={() => setShowForm(s => !s)}>
-                        {showForm ? 'Cancel' : '+ Add Project'}
-                    </button>
+                    {user && (
+                        <button className="toggle-form-btn" onClick={() => setShowForm(s => !s)}>
+                            {showForm ? 'Cancel' : '+ Add Project'}
+                        </button>
+                    )}
                 </div>
             </div>
 

@@ -2,9 +2,11 @@ import React from "react";
 import useFirestore from '../hooks/useFirestore'
 import { motion, AnimatePresence } from 'framer-motion'
 import { projectFireStore, projectStorage } from '../firebase/config'
+import { useAuthContext } from '../context/AuthContext'
 
 const ImageGrid = ({ setSelectedDoc })=>{
     const {docs} = useFirestore('images')
+    const { user } = useAuthContext()
 
     const handleDelete = async (e, doc) => {
         e.stopPropagation()
@@ -28,13 +30,15 @@ const ImageGrid = ({ setSelectedDoc })=>{
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.5 }}
                         />
-                        <motion.button
-                            className="delete-btn"
-                            variants={{ hovered: { opacity: 1 } }}
-                            initial={{ opacity: 0 }}
-                            transition={{ duration: 0.2 }}
-                            onClick={(e) => handleDelete(e, doc)}
-                        >✕</motion.button>
+                        {user && (
+                            <motion.button
+                                className="delete-btn"
+                                variants={{ hovered: { opacity: 1 } }}
+                                initial={{ opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                                onClick={(e) => handleDelete(e, doc)}
+                            >✕</motion.button>
+                        )}
                         {(doc.location || doc.dateTaken) && (
                             <motion.div
                                 className="img-info"
