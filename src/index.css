@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+:root{
+  --primary: #efb6b2;
+  --secondary: #4e4e4e;
+  --error: #ff4a4a;
+}
+
+/* base styles & title */
+body{
+  font-family: "Noto Serif";
+  color: var(--secondary);
+}
+.App{
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* navbar */
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 40px;
+}
+.nav-brand{
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+.nav-links{
+  display: flex;
+  gap: 28px;
+}
+.nav-link{
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+.nav-link:hover{
+  color: var(--primary);
+}
+.nav-active{
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* page content */
+.page-content{
+  padding-bottom: 60px;
+}
+
+/* home page */
+.home-page section{
+  margin-bottom: 50px;
+}
+.hero{
+  text-align: center;
+  padding: 60px 0 40px;
+}
+.hero h1{
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin: 0 0 10px;
+}
+.tagline{
+  font-size: 1.1rem;
+  color: #999;
+  margin: 0;
+}
+.about h2, .contact h2, .resume-section h2{
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: var(--secondary);
+}
+.about p{
+  line-height: 1.8;
+  max-width: 600px;
+}
+.contact-links{
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.contact-link{
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.contact-link:hover{
+  background: var(--primary);
+  color: white;
+}
+.resume-actions{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.resume-download-btn{
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.resume-download-btn:hover{
+  filter: brightness(0.92);
+}
+.resume-upload-btn{
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.resume-upload-btn input{
+  display: none;
+}
+.resume-upload-btn:hover{
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.resume-hint{
+  color: #aaa;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+/* gallery page */
+.gallery-page h2{
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+.gallery-page > p{
+  color: #999;
+  margin-bottom: 10px;
+}
+
+/* projects page */
+.projects-page h2{
+  font-size: 1.8rem;
+}
+.projects-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.projects-header-actions{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.github-profile-link{
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.github-profile-link:hover{
+  color: var(--primary);
+}
+.toggle-form-btn{
+  padding: 8px 18px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+.toggle-form-btn:hover{
+  filter: brightness(0.92);
+}
+.project-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin-bottom: 36px;
+  padding: 24px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+.project-form input,
+.project-form textarea{
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+.project-form textarea{
+  resize: vertical;
+  min-height: 80px;
+}
+.clip-upload-label{
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #999;
+}
+.clip-upload-label input{
+  display: none;
+}
+.submit-project-btn{
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  align-self: flex-start;
+}
+.submit-project-btn:disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.project-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.project-card{
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.project-video-wrap{
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #111;
+  overflow: hidden;
+}
+.project-video-wrap video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-info{
+  padding: 16px;
+}
+.project-info h3{
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+.project-info p{
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+.project-links{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.project-github-link{
+  font-size: 0.85rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+.project-github-link:hover{
+  text-decoration: underline;
+}
+.project-delete-btn{
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+.project-delete-btn:hover{
+  color: #e33;
+}
+.title h1{
+  color: var(--primary);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+.title h2, .title p{
+  text-align: center;
+}
+.title h2{
+  margin-top: 60px;
+  font-size: 2.6rem;
+}
+
+/* upload form styles */
+form{
+  margin: 30px auto 10px;
+  text-align: center;
+}
+.upload-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+.upload-btn input{
+  display: none;
+}
+.upload-btn span{
+  font-size: 2.5rem;
+  color: white;
+  line-height: 1;
+}
+.upload-btn:hover{
+  filter: brightness(0.92);
+}
+.progress-bar{
+  height:5px;
+  background: var(--primary);
+  margin-top: 20px;
+}
+
+/* progress bar styles */
+.progress-bar{
+  height: 5px;
+  background: var(--primary);
+  margin-top: 20px;
+}
+
+/* image grid styles */
+.img-grid{
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.img-wrap{
+  overflow: hidden;
+  height: 0;
+  padding: 50% 0;
+  position: relative;
+  opacity: 0.85;
+}
+.img-wrap img{
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 150%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.img-wrap{
+  cursor: pointer;
+}
+.delete-btn{
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: #e33;
+  color: white;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.delete-btn:hover{
+  background: #c00;
+}
+.img-info{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 10px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  color: white;
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+.img-info p{
+  margin: 2px 0;
+}
+
+/* modal styles */
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.backdrop img{
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
