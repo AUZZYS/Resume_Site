@@ -48,9 +48,9 @@ const Projects = () => {
     return (
         <div className="projects-page">
             <div className="projects-header">
-                <h2>Projects</h2>
+                <h2>Projects (hover images for clip)</h2>
                 <div className="projects-header-actions">
-                    <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noreferrer" className="github-profile-link">
+                    <a href="https://github.com/AUZZYS" target="_blank" rel="noreferrer" className="github-profile-link">
                         GitHub Profile →
                     </a>
                     {user && (
