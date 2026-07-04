@@ -1,13 +1,13 @@
-# Ollie Shearing — Portfolio Site
+# Ollie Shearing - Portfolio Site
 
 A personal portfolio and photo gallery web app built with React and Firebase.
 
 ## Features
 
-- **Home** — Bio, contact links, and resume download/upload
-- **Gallery** — Photo grid with upload, delete, and EXIF location/date overlay on hover. Supports JPEG, PNG, and NEF (RAW) files
-- **Projects** — Video clip cards linking to GitHub repositories, with hover-to-play previews
-- **Auth** — Firebase email/password login gates all write operations (upload, delete). Public visitors can view everything
+- **Home**: Bio, contact links, and resume download/upload
+- **Gallery**: Photo grid with upload, delete, and EXIF location/date overlay on hover. Supports JPEG, PNG, and NEF (RAW) files
+- **Projects**: Video clip cards linking to GitHub repositories, with hover-to-play previews
+- **Auth**: Firebase email/password login gates all write operations (upload, delete). Public visitors can view everything
 
 ## Tech Stack
 
