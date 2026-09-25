@@ -28,14 +28,15 @@ const Home = () => {
         <div className="home-page">
             <section className="hero">
                 <h1>Ollie Shearing</h1>
-                <p className="tagline">Your tagline here</p>
+                <p className="tagline">CS student. Systems thinker. Future SWE.</p>
             </section>
 
             <section className="about">
                 <h2>About Me</h2>
                 <p>
-                    Write your bio here. Tell visitors who you are, what you do,
-                    and what you're passionate about.
+                    I am a Computer Science student at Rose-Hulman Institute of Technology (graduating May 2028) with a strong foundation in systems programming, algorithms, and software design. My project work includes a 5-stage pipelined RISC-V processor built in Verilog, cryptographic algorithm implementations in Python, including SHA-512, AES, and RSA from scratch, and a fully playable Java platformer built on an OOP framework.
+                    I’m currently seeking software engineering internships where I can contribute to systems, pick up on industry tooling, and grow alongside experienced engineers. Outside of code, I serve as Secretary of Rose-Hulman's Climbing Club and set bouldering routes on campus.
+
                 </p>
             </section>
 

@@ -6,6 +6,7 @@ const UploadForm = () => {
     const [files, setFiles] = useState([])
     const [progresses, setProgresses] = useState({})
     const [error, setError] = useState(null)
+    const [uploadErrors, setUploadErrors] = useState({})
 
     const types = ['image/png', 'image/jpeg']
 
@@ -33,6 +34,10 @@ const UploadForm = () => {
         setProgresses(prev => ({ ...prev, [file.name]: value }))
     }, [])
 
+    const handleUploadError = useCallback((file, err) => {
+        setUploadErrors(prev => ({ ...prev, [file.name]: err.message || String(err) }))
+    }, [])
+
     return(
         <form>
             <label className="upload-btn">
@@ -48,12 +53,17 @@ const UploadForm = () => {
                     />
                 )}
                 {files.map(file => (
-                    <ProgressBar
-                        key={file.name}
-                        file={file}
-                        onDone={() => removeFile(file)}
-                        onProgress={(p) => handleProgress(file, p)}
-                    />
+                    <div key={file.name}>
+                        {uploadErrors[file.name] && (
+                            <div className="error">{file.name}: {uploadErrors[file.name]}</div>
+                        )}
+                        <ProgressBar
+                            file={file}
+                            onDone={() => removeFile(file)}
+                            onProgress={(p) => handleProgress(file, p)}
+                            onError={(err) => handleUploadError(file, err)}
+                        />
+                    </div>
                 ))}
             </div>
         </form>
