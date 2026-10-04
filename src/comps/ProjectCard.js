@@ -17,7 +17,17 @@ const ProjectCard = ({ doc }) => {
                 onMouseEnter={() => videoRef.current?.play()}
                 onMouseLeave={() => { videoRef.current?.pause(); videoRef.current.currentTime = 0 }}
             >
-                <video ref={videoRef} src={doc.clipUrl} muted loop playsInline />
+                <video
+                    ref={videoRef}
+                    src={doc.clipUrl}
+                    muted
+                    loop
+                    playsInline
+                    disablePictureInPicture
+                    disableRemotePlayback
+                    controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
+                    onContextMenu={(e) => e.preventDefault()}
+                />
             </div>
             <div className="project-info">
                 <h3>{doc.title}</h3>

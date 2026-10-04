@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { projectStorage } from '../firebase/config'
 import { useAuthContext } from '../context/AuthContext'
+import ResumeDownload from '../comps/ResumeDownload'
 
 const Home = () => {
     const [resumeUrl, setResumeUrl] = useState(null)
@@ -52,11 +53,7 @@ const Home = () => {
             <section className="resume-section">
                 <h2>Resume</h2>
                 <div className="resume-actions">
-                    {resumeUrl && (
-                        <a href={resumeUrl} target="_blank" rel="noreferrer" className="resume-download-btn">
-                            Download Resume
-                        </a>
-                    )}
+                    {resumeUrl && <ResumeDownload url={resumeUrl} />}
                     {user && (
                         <label className="resume-upload-btn">
                             {uploading ? 'Uploading...' : resumeUrl ? 'Update Resume' : 'Upload Resume'}
